@@ -252,7 +252,7 @@ function optionallyAddQueryNormalizationMiddleware(
 }
 
 function toExpressParams(part) {
-  return part.replace(/\{([^}]+)}/g, ':$1');
+  return part.replace(/\{([^}]+)}/g, ':$1').replace(/\\/g, '/');
 }
 
 function toPromiseCompatibleMiddleware(fn) {
